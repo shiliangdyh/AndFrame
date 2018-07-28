@@ -1,1 +1,1 @@
-include ':app', ':baselib', ':selectfilelib'
+include ':app', ':baselib', ':selectfilelib', ':matisse'

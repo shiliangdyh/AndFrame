@@ -61,11 +61,13 @@ open class SLActivity : SwipeBackActivity() {
 
     private fun getPlaceBarHeight(): Int {
         var placeBarHeight = 0
-        if (Build.VERSION.SDK_INT > 19) {
+        if (Build.VERSION.SDK_INT > 19 && showPlaceBar()) {
             placeBarHeight = ScreenUtil.getStatusBarHeight(this)
         }
         return placeBarHeight
     }
+
+    open fun showPlaceBar() = true
 
     override fun setContentView(layoutResID: Int) {
         val view = layoutInflater.inflate(layoutResID, frameLayout, false)
