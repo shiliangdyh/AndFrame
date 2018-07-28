@@ -10,13 +10,12 @@ import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import com.leon.lfilepickerlibrary.filter.LFileFilter
 import com.leon.lfilepickerlibrary.utils.FileUtils
 import com.mirstone.baselib.SLActivity
 import com.mirstone.selectfilelib.R
 import com.mirstone.selectfilelib.adapter.PathAdapter
 import com.mirstone.selectfilelib.bean.Config
-import com.mirstone.selectfilelib.util.FileUtil
+import com.mirstone.selectfilelib.filter.SLFileFilter
 import kotlinx.android.synthetic.main.activity_sl_select_file.*
 import java.io.File
 
@@ -35,7 +34,7 @@ class SLSelectFileActivity : SLActivity() {
     private var fileList: List<File> = ArrayList()
     private lateinit var adapter: PathAdapter
     private lateinit var path: String
-    private lateinit var filter: LFileFilter
+    private lateinit var filter: SLFileFilter
     private val files = ArrayList<String>()
 
     private val listNumbers = ArrayList<String>()//存放选中条目的数据地址
@@ -149,7 +148,6 @@ class SLSelectFileActivity : SLActivity() {
     private fun checkInDirectory(path: String) {
         //更新数据源
         fileList = FileUtils.getFileList(path, filter, true, 0)
-        fileList = FileUtil.filterHideFile(fileList)
         adapter.setmListData(fileList)
         adapter.notifyDataSetChanged()
         recyclerView.scrollToPosition(0)
@@ -157,7 +155,7 @@ class SLSelectFileActivity : SLActivity() {
 
     private fun initRecycler() {
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        filter = LFileFilter(config.types)
+        filter = SLFileFilter(config.types, false)
         adapter = PathAdapter(fileList, this, filter, config.mutiMode, true, 0)
         recyclerView.adapter = adapter
         recyclerView.setmEmptyView(tvEmpty)

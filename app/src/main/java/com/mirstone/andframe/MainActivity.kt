@@ -6,11 +6,10 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
-import com.mirstone.baselib.SLActivity
-import kotlinx.android.synthetic.main.activity_main.*
-import android.support.v4.app.ActivityOptionsCompat
 import android.util.Log
+import com.mirstone.baselib.SLActivity
 import com.mirstone.selectfilelib.SLFilePicker
+import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 
