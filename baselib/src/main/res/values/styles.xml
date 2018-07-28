@@ -1,0 +1,25 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="BaseTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/Customer</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="BaseTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="Customer" mce_bogus="1" parent="@android:style/Animation.Activity">
+        <!-- 进入一个新的Activity的时候，A->B B进入动画 -->
+        <item name="android:activityOpenEnterAnimation">@anim/anim_enter</item>
+        <!-- 进入一个新的Activity的时候，A->B A退出动画 -->
+        <item name="android:activityOpenExitAnimation">@anim/anim_exit</item>
+        <!-- 退出一个Activity的时候，B返回到A A进入动画 -->
+        <item name="android:activityCloseEnterAnimation">@anim/back_enter</item>
+        <!-- 退出一个Activity的时候，B返回到A B退出动画 -->
+        <item name="android:activityCloseExitAnimation">@anim/back_exit</item>
+    </style>
+</resources>
