@@ -8,7 +8,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import com.mirstone.baselib.SLActivity
-import com.mirstone.baselib.dialog.SLDialog
 import com.zhihu.matisse.Matisse
 import com.zhihu.matisse.MimeType
 import com.zhihu.matisse.filter.Filter
@@ -31,7 +30,7 @@ class MainActivity : SLActivity() {
 
 //            startActivity(intent)
 //            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), REQUEST_CODE)
-            SLDialog().show(supportFragmentManager)
+//            SLDialog().show(supportFragmentManager)
         })
 
     }

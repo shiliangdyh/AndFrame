@@ -601,14 +601,17 @@ public final class R {
         public static int subtitle_outline_width = 0x7f080077;
         public static int subtitle_shadow_offset = 0x7f080078;
         public static int subtitle_shadow_radius = 0x7f080079;
-        public static int tooltip_corner_radius = 0x7f08007a;
-        public static int tooltip_horizontal_padding = 0x7f08007b;
-        public static int tooltip_margin = 0x7f08007c;
-        public static int tooltip_precise_anchor_extra_offset = 0x7f08007d;
-        public static int tooltip_precise_anchor_threshold = 0x7f08007e;
-        public static int tooltip_vertical_padding = 0x7f08007f;
-        public static int tooltip_y_offset_non_touch = 0x7f080080;
-        public static int tooltip_y_offset_touch = 0x7f080081;
+        public static int toast_margin = 0x7f08007a;
+        public static int toast_margin_bottom = 0x7f08007b;
+        public static int toast_padding = 0x7f08007c;
+        public static int tooltip_corner_radius = 0x7f08007d;
+        public static int tooltip_horizontal_padding = 0x7f08007e;
+        public static int tooltip_margin = 0x7f08007f;
+        public static int tooltip_precise_anchor_extra_offset = 0x7f080080;
+        public static int tooltip_precise_anchor_threshold = 0x7f080081;
+        public static int tooltip_vertical_padding = 0x7f080082;
+        public static int tooltip_y_offset_non_touch = 0x7f080083;
+        public static int tooltip_y_offset_touch = 0x7f080084;
     }
     public static final class drawable {
         public static int abc_ab_share_pack_mtrl_alpha = 0x7f090001;
@@ -720,8 +723,9 @@ public final class R {
         public static int shadow_bottom = 0x7f09006b;
         public static int shadow_left = 0x7f09006c;
         public static int shadow_right = 0x7f09006d;
-        public static int tooltip_frame_dark = 0x7f09006e;
-        public static int tooltip_frame_light = 0x7f09006f;
+        public static int toast_bg = 0x7f09006e;
+        public static int tooltip_frame_dark = 0x7f09006f;
+        public static int tooltip_frame_light = 0x7f090070;
     }
     public static final class id {
         public static int action0 = 0x7f0c0001;
