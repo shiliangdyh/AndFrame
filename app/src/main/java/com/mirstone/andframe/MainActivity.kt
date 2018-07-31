@@ -1,15 +1,14 @@
 package com.mirstone.andframe
 
-import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
 import android.util.Log
 import com.mirstone.baselib.SLActivity
+import com.mirstone.baselib.dialog.SLDialog
 import com.zhihu.matisse.Matisse
 import com.zhihu.matisse.MimeType
 import com.zhihu.matisse.filter.Filter
@@ -27,11 +26,12 @@ class MainActivity : SLActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         image.setOnClickListener({
-//            val intent = Intent(this, TestActivity::class.java)
+            //            val intent = Intent(this, TestActivity::class.java)
 //            ActivityCompat.startActivity(this, intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, image, "zoomImageView").toBundle())
 
 //            startActivity(intent)
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), REQUEST_CODE)
+//            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), REQUEST_CODE)
+            SLDialog().show(supportFragmentManager)
         })
 
     }
@@ -57,7 +57,7 @@ class MainActivity : SLActivity() {
                         .maxSelectable(9)
                         .addFilter(GifSizeFilter(320, 320, 5 * Filter.K * Filter.K))
                         .gridExpectedSize(
-                                resources.getDimensionPixelSize(R.dimen.grid_expected_size))
+                                resources.getDimensionPixelSize(R.dimen.default_dialog_margin))
                         .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
                         .thumbnailScale(0.85f)
                         // for glide-V3
@@ -90,13 +90,13 @@ class MainActivity : SLActivity() {
         if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK && data != null) {
             val list = data.getStringArrayListExtra("paths")
             Log.d("MainActivity", Arrays.toString(list.toArray()))
-        }else if (requestCode == REQUEST_CODE_CHOOSE && resultCode == Activity.RESULT_OK && data != null) {
+        } else if (requestCode == REQUEST_CODE_CHOOSE && resultCode == Activity.RESULT_OK && data != null) {
             var uris = Matisse.obtainResult(data)
             var urls = Matisse.obtainPathResult(data)
             Log.d("MainActivity", Arrays.toString(urls.toTypedArray()))
         }
     }
 
-    override fun isEnableGesture() = true
+    override fun isEnableGesture() = false
 
 }

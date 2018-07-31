@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".TestActivity" />
+
         <provider
             android:name=".MyProvider"
             android:authorities="com.mirstone.andframe.fileprovider"
