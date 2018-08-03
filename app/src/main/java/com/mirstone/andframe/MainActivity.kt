@@ -15,6 +15,7 @@ import com.zhihu.matisse.internal.entity.CaptureStrategy
 import com.zhihu.matisse.listener.OnCheckedListener
 import com.zhihu.matisse.listener.OnSelectedListener
 import kotlinx.android.synthetic.main.activity_main.*
+import java.net.URL
 import java.util.*
 
 
@@ -24,13 +25,9 @@ class MainActivity : SLActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        image.setOnClickListener({
-            //            val intent = Intent(this, TestActivity::class.java)
-//            ActivityCompat.startActivity(this, intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, image, "zoomImageView").toBundle())
 
-//            startActivity(intent)
-//            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), REQUEST_CODE)
-//            SLDialog().show(supportFragmentManager)
+        image.setOnClickListener({
+            URL("").readText()
         })
 
     }
